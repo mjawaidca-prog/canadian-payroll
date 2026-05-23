@@ -1,0 +1,22 @@
+{
+  "name": "payroll-desktop",
+  "version": "0.1.0",
+  "description": "Canadian payroll desktop application (Electron + React)",
+  "scripts": {
+    "dev": "electron .",
+    "build": "npm run build:web && npm run build:electron",
+    "build:web": "next build",
+    "build:electron": "tsc",
+    "start": "electron ."
+  },
+  "main": "dist/main.js",
+  "dependencies": {
+    "electron": "^27.0.0",
+    "electron-updater": "^6.1.7",
+    "better-sqlite3": "^9.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.6"
+  }
+}
