@@ -14,11 +14,14 @@
     "dev": "npm run dev -ws",
     "build": "npm run build -ws",
     "test": "npm run test -ws",
-    "lint": "npm run lint -ws",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix && prettier --write .",
+    "format": "prettier --write .",
     "backend:dev": "npm run dev -w packages/backend",
     "web:dev": "npm run dev -w packages/web",
     "desktop:dev": "npm run dev -w packages/desktop",
-    "cli:build": "npm run build -w packages/cli"
+    "cli:build": "npm run build -w packages/cli",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=20.0.0",
@@ -27,6 +30,10 @@
   "devDependencies": {
     "typescript": "^5.3.3",
     "prettier": "^3.1.1",
-    "eslint": "^8.55.0"
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.2"
   }
 }
