@@ -1,0 +1,12 @@
+packages/backend
+packages/desktop
+packages/cli
+.github
+docs
+.husky
+*.md
+jest.config.js
+tsconfig.json
+.eslintrc.json
+.prettierrc.json
+.lintstagedrc.json
