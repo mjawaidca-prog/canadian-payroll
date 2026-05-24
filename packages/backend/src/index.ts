@@ -6,6 +6,7 @@ import { DataSource } from 'typeorm';
 import typeormConfig from './typeorm.config';
 import { createOrganizationRoutes } from './modules/organizations/routes/OrganizationRoutes';
 import { createEmployeeRoutes } from './modules/employees/routes/EmployeeRoutes';
+import { createReportingRoutes } from './modules/reporting/routes/ReportingRoutes';
 import { AppError } from './common/errors/AppError';
 
 dotenv.config();
@@ -69,6 +70,9 @@ const setupRoutes = () => {
     createEmployeeRoutes(dataSource)
   );
 
+  // Reporting routes (T4, ROE, tax reporting)
+  app.use('/api/reporting', createReportingRoutes(dataSource));
+
   // 404 handler
   app.use((req: Request, res: Response) => {
     res.status(404).json({
@@ -112,6 +116,7 @@ const startServer = async () => {
       console.log(`\nAPI Endpoints:`);
       console.log(`  Organizations: http://localhost:${PORT}/api/organizations`);
       console.log(`  Employees: http://localhost:${PORT}/api/organizations/{id}/employees`);
+      console.log(`  Reporting (T4/ROE): http://localhost:${PORT}/api/reporting`);
       console.log('\n');
     });
   } catch (error) {

@@ -129,6 +129,9 @@ export default function Home() {
                   <Link href="/payroll">
                     <Button variant="text">Process Payroll</Button>
                   </Link>
+                  <Link href="/reporting">
+                    <Button variant="text">Tax Reporting (Phase 5)</Button>
+                  </Link>
                   <Link href="/reports">
                     <Button variant="text">View Reports</Button>
                   </Link>
